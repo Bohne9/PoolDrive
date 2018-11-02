@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FFF7333218C7B32002E3827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7332218C7B32002E3827 /* AppDelegate.swift */; };
+		4FFF7335218C7B32002E3827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7334218C7B32002E3827 /* ViewController.swift */; };
+		4FFF7338218C7B32002E3827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF7336218C7B32002E3827 /* Main.storyboard */; };
+		4FFF733A218C7B33002E3827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF7339218C7B33002E3827 /* Assets.xcassets */; };
+		4FFF733D218C7B33002E3827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */; };
+		4FFF7348218C7B33002E3827 /* PoolDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7347218C7B33002E3827 /* PoolDriveTests.swift */; };
+		4FFF7353218C7B33002E3827 /* PoolDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7352218C7B33002E3827 /* PoolDriveUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4FFF7344218C7B33002E3827 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FFF7327218C7B32002E3827 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FFF732E218C7B32002E3827;
+			remoteInfo = PoolDrive;
+		};
+		4FFF734F218C7B33002E3827 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FFF7327218C7B32002E3827 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FFF732E218C7B32002E3827;
+			remoteInfo = PoolDrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4FFF732F218C7B32002E3827 /* PoolDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoolDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FFF7332218C7B32002E3827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4FFF7334218C7B32002E3827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4FFF7337218C7B32002E3827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4FFF7339218C7B33002E3827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FFF733C218C7B33002E3827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FFF733E218C7B33002E3827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FFF7343218C7B33002E3827 /* PoolDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FFF7347218C7B33002E3827 /* PoolDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDriveTests.swift; sourceTree = "<group>"; };
+		4FFF7349218C7B33002E3827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FFF734E218C7B33002E3827 /* PoolDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FFF7352218C7B33002E3827 /* PoolDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDriveUITests.swift; sourceTree = "<group>"; };
+		4FFF7354218C7B33002E3827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FFF732C218C7B32002E3827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FFF7340218C7B33002E3827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FFF734B218C7B33002E3827 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4FFF7326218C7B32002E3827 = {
+			isa = PBXGroup;
+			children = (
+				4FFF7331218C7B32002E3827 /* PoolDrive */,
+				4FFF7346218C7B33002E3827 /* PoolDriveTests */,
+				4FFF7351218C7B33002E3827 /* PoolDriveUITests */,
+				4FFF7330218C7B32002E3827 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4FFF7330218C7B32002E3827 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF732F218C7B32002E3827 /* PoolDrive.app */,
+				4FFF7343218C7B33002E3827 /* PoolDriveTests.xctest */,
+				4FFF734E218C7B33002E3827 /* PoolDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FFF7331218C7B32002E3827 /* PoolDrive */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF7332218C7B32002E3827 /* AppDelegate.swift */,
+				4FFF7334218C7B32002E3827 /* ViewController.swift */,
+				4FFF7336218C7B32002E3827 /* Main.storyboard */,
+				4FFF7339218C7B33002E3827 /* Assets.xcassets */,
+				4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */,
+				4FFF733E218C7B33002E3827 /* Info.plist */,
+			);
+			path = PoolDrive;
+			sourceTree = "<group>";
+		};
+		4FFF7346218C7B33002E3827 /* PoolDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF7347218C7B33002E3827 /* PoolDriveTests.swift */,
+				4FFF7349218C7B33002E3827 /* Info.plist */,
+			);
+			path = PoolDriveTests;
+			sourceTree = "<group>";
+		};
+		4FFF7351218C7B33002E3827 /* PoolDriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF7352218C7B33002E3827 /* PoolDriveUITests.swift */,
+				4FFF7354218C7B33002E3827 /* Info.plist */,
+			);
+			path = PoolDriveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FFF732E218C7B32002E3827 /* PoolDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FFF7357218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDrive" */;
+			buildPhases = (
+				4FFF732B218C7B32002E3827 /* Sources */,
+				4FFF732C218C7B32002E3827 /* Frameworks */,
+				4FFF732D218C7B32002E3827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoolDrive;
+			productName = PoolDrive;
+			productReference = 4FFF732F218C7B32002E3827 /* PoolDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4FFF7342218C7B33002E3827 /* PoolDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FFF735A218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDriveTests" */;
+			buildPhases = (
+				4FFF733F218C7B33002E3827 /* Sources */,
+				4FFF7340218C7B33002E3827 /* Frameworks */,
+				4FFF7341218C7B33002E3827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FFF7345218C7B33002E3827 /* PBXTargetDependency */,
+			);
+			name = PoolDriveTests;
+			productName = PoolDriveTests;
+			productReference = 4FFF7343218C7B33002E3827 /* PoolDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4FFF734D218C7B33002E3827 /* PoolDriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FFF735D218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDriveUITests" */;
+			buildPhases = (
+				4FFF734A218C7B33002E3827 /* Sources */,
+				4FFF734B218C7B33002E3827 /* Frameworks */,
+				4FFF734C218C7B33002E3827 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FFF7350218C7B33002E3827 /* PBXTargetDependency */,
+			);
+			name = PoolDriveUITests;
+			productName = PoolDriveUITests;
+			productReference = 4FFF734E218C7B33002E3827 /* PoolDriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FFF7327218C7B32002E3827 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Jonah Schueller";
+				TargetAttributes = {
+					4FFF732E218C7B32002E3827 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4FFF7342218C7B33002E3827 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4FFF732E218C7B32002E3827;
+					};
+					4FFF734D218C7B33002E3827 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4FFF732E218C7B32002E3827;
+					};
+				};
+			};
+			buildConfigurationList = 4FFF732A218C7B32002E3827 /* Build configuration list for PBXProject "PoolDrive" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4FFF7326218C7B32002E3827;
+			productRefGroup = 4FFF7330218C7B32002E3827 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FFF732E218C7B32002E3827 /* PoolDrive */,
+				4FFF7342218C7B33002E3827 /* PoolDriveTests */,
+				4FFF734D218C7B33002E3827 /* PoolDriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FFF732D218C7B32002E3827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FFF733D218C7B33002E3827 /* LaunchScreen.storyboard in Resources */,
+				4FFF733A218C7B33002E3827 /* Assets.xcassets in Resources */,
+				4FFF7338218C7B32002E3827 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FFF7341218C7B33002E3827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FFF734C218C7B33002E3827 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FFF732B218C7B32002E3827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FFF7335218C7B32002E3827 /* ViewController.swift in Sources */,
+				4FFF7333218C7B32002E3827 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FFF733F218C7B33002E3827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FFF7348218C7B33002E3827 /* PoolDriveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FFF734A218C7B33002E3827 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FFF7353218C7B33002E3827 /* PoolDriveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4FFF7345218C7B33002E3827 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FFF732E218C7B32002E3827 /* PoolDrive */;
+			targetProxy = 4FFF7344218C7B33002E3827 /* PBXContainerItemProxy */;
+		};
+		4FFF7350218C7B33002E3827 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4FFF732E218C7B32002E3827 /* PoolDrive */;
+			targetProxy = 4FFF734F218C7B33002E3827 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4FFF7336218C7B32002E3827 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FFF7337218C7B32002E3827 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FFF733C218C7B33002E3827 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FFF7355218C7B33002E3827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4FFF7356218C7B33002E3827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FFF7358218C7B33002E3827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = PoolDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4FFF7359218C7B33002E3827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = PoolDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4FFF735B218C7B33002E3827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = PoolDriveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoolDrive.app/PoolDrive";
+			};
+			name = Debug;
+		};
+		4FFF735C218C7B33002E3827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = PoolDriveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoolDrive.app/PoolDrive";
+			};
+			name = Release;
+		};
+		4FFF735E218C7B33002E3827 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = PoolDriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PoolDrive;
+			};
+			name = Debug;
+		};
+		4FFF735F218C7B33002E3827 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = PoolDriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PoolDrive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FFF732A218C7B32002E3827 /* Build configuration list for PBXProject "PoolDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FFF7355218C7B33002E3827 /* Debug */,
+				4FFF7356218C7B33002E3827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FFF7357218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FFF7358218C7B33002E3827 /* Debug */,
+				4FFF7359218C7B33002E3827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FFF735A218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FFF735B218C7B33002E3827 /* Debug */,
+				4FFF735C218C7B33002E3827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FFF735D218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FFF735E218C7B33002E3827 /* Debug */,
+				4FFF735F218C7B33002E3827 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FFF7327218C7B32002E3827 /* Project object */;
+}
