@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        Auth.auth().signInAnonymously { (result, error) in
+            if error != nil {
+                print("There was an error while authenticating: \(error!.localizedDescription)")
+                return
+            }
+            print("Succesfully authenticated: \(result!.user.uid)")
+        }
+        
         return true
     }
 

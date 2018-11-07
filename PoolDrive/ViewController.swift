@@ -23,13 +23,14 @@ class ViewController: UIViewController {
 
     @IBAction func onSubmit(_ sender: Any) {
         let functions = Functions.functions()
-        
+        print("onSubmit")
         functions.httpsCallable("addMessage").call(["text": textField.text]) { (result, error) in
             if let error = error as NSError? {
                 if error.domain == FunctionsErrorDomain {
                     let code = FunctionsErrorCode(rawValue: error.code)
                     let message = error.localizedDescription
                     let details = error.userInfo[FunctionsErrorDetailsKey]
+                    print("Ups there was an error: \(message)")
                 }
                 // ...
             }
