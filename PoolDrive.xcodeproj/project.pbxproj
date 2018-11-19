@@ -8,6 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		3F3A4E38C0D815C9167E6323 /* Pods_PoolDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752E8760D14BAD3D65FACD99 /* Pods_PoolDrive.framework */; };
+		4F8C6B56219C209300BA3130 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C6B55219C209300BA3130 /* DataManager.swift */; };
+		4F8C6B58219CB11000BA3130 /* PoolFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C6B57219CB11000BA3130 /* PoolFile.swift */; };
+		4F8C6B5A219EBA1A00BA3130 /* NoSQLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C6B59219EBA1A00BA3130 /* NoSQLExtension.swift */; };
+		4FB2A426219707D6005D2C12 /* SignUpCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A425219707D6005D2C12 /* SignUpCardView.swift */; };
+		4FD88E9B2194069A00F6A320 /* SignInCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88E9A2194069A00F6A320 /* SignInCardView.swift */; };
+		4FD88E9D2194089200F6A320 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88E9C2194089200F6A320 /* AuthController.swift */; };
+		4FD88E9F2194402700F6A320 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88E9E2194402700F6A320 /* AuthTextField.swift */; };
+		4FD88EB32194789000F6A320 /* Exo2-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA12194788900F6A320 /* Exo2-BoldItalic.ttf */; };
+		4FD88EB42194789000F6A320 /* Exo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA22194788A00F6A320 /* Exo2-SemiBold.ttf */; };
+		4FD88EB52194789000F6A320 /* Exo2-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA32194788A00F6A320 /* Exo2-Light.ttf */; };
+		4FD88EB62194789000F6A320 /* Exo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA42194788A00F6A320 /* Exo2-ExtraBold.ttf */; };
+		4FD88EB72194789000F6A320 /* Exo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA52194788B00F6A320 /* Exo2-Regular.ttf */; };
+		4FD88EB82194789000F6A320 /* Exo2-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA62194788B00F6A320 /* Exo2-BlackItalic.ttf */; };
+		4FD88EB92194789000F6A320 /* Exo2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA72194788C00F6A320 /* Exo2-Medium.ttf */; };
+		4FD88EBA2194789000F6A320 /* Exo2-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA82194788C00F6A320 /* Exo2-ExtraBoldItalic.ttf */; };
+		4FD88EBB2194789000F6A320 /* Exo2-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EA92194788C00F6A320 /* Exo2-SemiBoldItalic.ttf */; };
+		4FD88EBC2194789000F6A320 /* Exo2-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EAA2194788D00F6A320 /* Exo2-Thin.ttf */; };
+		4FD88EBD2194789000F6A320 /* Exo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EAB2194788D00F6A320 /* Exo2-Bold.ttf */; };
+		4FD88EBE2194789000F6A320 /* Exo2-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EAC2194788D00F6A320 /* Exo2-ExtraLightItalic.ttf */; };
+		4FD88EBF2194789000F6A320 /* Exo2-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EAD2194788E00F6A320 /* Exo2-LightItalic.ttf */; };
+		4FD88EC02194789000F6A320 /* Exo2-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EAE2194788E00F6A320 /* Exo2-ExtraLight.ttf */; };
+		4FD88EC12194789000F6A320 /* Exo2-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EAF2194788F00F6A320 /* Exo2-Black.ttf */; };
+		4FD88EC22194789000F6A320 /* Exo2-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EB02194788F00F6A320 /* Exo2-Italic.ttf */; };
+		4FD88EC32194789000F6A320 /* Exo2-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EB12194788F00F6A320 /* Exo2-MediumItalic.ttf */; };
+		4FD88EC42194789000F6A320 /* Exo2-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88EB22194789000F6A320 /* Exo2-ThinItalic.ttf */; };
+		4FD88EC621947F7C00F6A320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88EC521947F7C00F6A320 /* Extensions.swift */; };
+		4FD88EC8219485C200F6A320 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88EC7219485C200F6A320 /* AuthButton.swift */; };
+		4FD88ECC2196EE9300F6A320 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88ECB2196EE9300F6A320 /* SourceSansPro-Bold.ttf */; };
 		4FFF7333218C7B32002E3827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7332218C7B32002E3827 /* AppDelegate.swift */; };
 		4FFF7335218C7B32002E3827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7334218C7B32002E3827 /* ViewController.swift */; };
 		4FFF7338218C7B32002E3827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF7336218C7B32002E3827 /* Main.storyboard */; };
@@ -38,6 +66,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F8C6B55219C209300BA3130 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		4F8C6B57219CB11000BA3130 /* PoolFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolFile.swift; sourceTree = "<group>"; };
+		4F8C6B59219EBA1A00BA3130 /* NoSQLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSQLExtension.swift; sourceTree = "<group>"; };
+		4FB2A425219707D6005D2C12 /* SignUpCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardView.swift; sourceTree = "<group>"; };
+		4FD88E9A2194069A00F6A320 /* SignInCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCardView.swift; sourceTree = "<group>"; };
+		4FD88E9C2194089200F6A320 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		4FD88E9E2194402700F6A320 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
+		4FD88EA12194788900F6A320 /* Exo2-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EA22194788A00F6A320 /* Exo2-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-SemiBold.ttf"; sourceTree = "<group>"; };
+		4FD88EA32194788A00F6A320 /* Exo2-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Light.ttf"; sourceTree = "<group>"; };
+		4FD88EA42194788A00F6A320 /* Exo2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraBold.ttf"; sourceTree = "<group>"; };
+		4FD88EA52194788B00F6A320 /* Exo2-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Regular.ttf"; sourceTree = "<group>"; };
+		4FD88EA62194788B00F6A320 /* Exo2-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-BlackItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EA72194788C00F6A320 /* Exo2-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Medium.ttf"; sourceTree = "<group>"; };
+		4FD88EA82194788C00F6A320 /* Exo2-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EA92194788C00F6A320 /* Exo2-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EAA2194788D00F6A320 /* Exo2-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Thin.ttf"; sourceTree = "<group>"; };
+		4FD88EAB2194788D00F6A320 /* Exo2-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Bold.ttf"; sourceTree = "<group>"; };
+		4FD88EAC2194788D00F6A320 /* Exo2-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EAD2194788E00F6A320 /* Exo2-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-LightItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EAE2194788E00F6A320 /* Exo2-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraLight.ttf"; sourceTree = "<group>"; };
+		4FD88EAF2194788F00F6A320 /* Exo2-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Black.ttf"; sourceTree = "<group>"; };
+		4FD88EB02194788F00F6A320 /* Exo2-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-Italic.ttf"; sourceTree = "<group>"; };
+		4FD88EB12194788F00F6A320 /* Exo2-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-MediumItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EB22194789000F6A320 /* Exo2-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ThinItalic.ttf"; sourceTree = "<group>"; };
+		4FD88EC521947F7C00F6A320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4FD88EC7219485C200F6A320 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		4FD88ECB2196EE9300F6A320 /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
 		4FFF732F218C7B32002E3827 /* PoolDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoolDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFF7332218C7B32002E3827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FFF7334218C7B32002E3827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +157,112 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4FD88E952193698B00F6A320 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F8C6B55219C209300BA3130 /* DataManager.swift */,
+				4F8C6B57219CB11000BA3130 /* PoolFile.swift */,
+				4F8C6B59219EBA1A00BA3130 /* NoSQLExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4FD88E962193699600F6A320 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FD88E992194067E00F6A320 /* Authentication */,
+				4FFF7336218C7B32002E3827 /* Main.storyboard */,
+				4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FD88E972193699B00F6A320 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF7334218C7B32002E3827 /* ViewController.swift */,
+				4FD88E9C2194089200F6A320 /* AuthController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FD88E98219369A200F6A320 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				4FFF7339218C7B33002E3827 /* Assets.xcassets */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		4FD88E992194067E00F6A320 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4FD88E9E2194402700F6A320 /* AuthTextField.swift */,
+				4FD88EC7219485C200F6A320 /* AuthButton.swift */,
+				4FD88ECE219701DC00F6A320 /* SignIn */,
+				4FD88ECD2196F27A00F6A320 /* SignUp */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4FD88EA02194786500F6A320 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4FD88ECA2196EE6900F6A320 /* SourceSansPro */,
+				4FD88EC92196EE5500F6A320 /* Exo2 */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		4FD88EC92196EE5500F6A320 /* Exo2 */ = {
+			isa = PBXGroup;
+			children = (
+				4FD88EAF2194788F00F6A320 /* Exo2-Black.ttf */,
+				4FD88EA62194788B00F6A320 /* Exo2-BlackItalic.ttf */,
+				4FD88EAB2194788D00F6A320 /* Exo2-Bold.ttf */,
+				4FD88EA12194788900F6A320 /* Exo2-BoldItalic.ttf */,
+				4FD88EA42194788A00F6A320 /* Exo2-ExtraBold.ttf */,
+				4FD88EA82194788C00F6A320 /* Exo2-ExtraBoldItalic.ttf */,
+				4FD88EAE2194788E00F6A320 /* Exo2-ExtraLight.ttf */,
+				4FD88EAC2194788D00F6A320 /* Exo2-ExtraLightItalic.ttf */,
+				4FD88EB02194788F00F6A320 /* Exo2-Italic.ttf */,
+				4FD88EA32194788A00F6A320 /* Exo2-Light.ttf */,
+				4FD88EAD2194788E00F6A320 /* Exo2-LightItalic.ttf */,
+				4FD88EA72194788C00F6A320 /* Exo2-Medium.ttf */,
+				4FD88EB12194788F00F6A320 /* Exo2-MediumItalic.ttf */,
+				4FD88EA52194788B00F6A320 /* Exo2-Regular.ttf */,
+				4FD88EA22194788A00F6A320 /* Exo2-SemiBold.ttf */,
+				4FD88EA92194788C00F6A320 /* Exo2-SemiBoldItalic.ttf */,
+				4FD88EAA2194788D00F6A320 /* Exo2-Thin.ttf */,
+				4FD88EB22194789000F6A320 /* Exo2-ThinItalic.ttf */,
+			);
+			path = Exo2;
+			sourceTree = "<group>";
+		};
+		4FD88ECA2196EE6900F6A320 /* SourceSansPro */ = {
+			isa = PBXGroup;
+			children = (
+				4FD88ECB2196EE9300F6A320 /* SourceSansPro-Bold.ttf */,
+			);
+			path = SourceSansPro;
+			sourceTree = "<group>";
+		};
+		4FD88ECD2196F27A00F6A320 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				4FB2A425219707D6005D2C12 /* SignUpCardView.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		4FD88ECE219701DC00F6A320 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				4FD88E9A2194069A00F6A320 /* SignInCardView.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		4FFF7326218C7B32002E3827 = {
 			isa = PBXGroup;
 			children = (
@@ -126,11 +288,11 @@
 		4FFF7331218C7B32002E3827 /* PoolDrive */ = {
 			isa = PBXGroup;
 			children = (
+				4FD88E98219369A200F6A320 /* Other */,
+				4FD88E972193699B00F6A320 /* Controller */,
+				4FD88E962193699600F6A320 /* View */,
+				4FD88E952193698B00F6A320 /* Model */,
 				4FFF7332218C7B32002E3827 /* AppDelegate.swift */,
-				4FFF7334218C7B32002E3827 /* ViewController.swift */,
-				4FFF7336218C7B32002E3827 /* Main.storyboard */,
-				4FFF7339218C7B33002E3827 /* Assets.xcassets */,
-				4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */,
 				4FFF733E218C7B33002E3827 /* Info.plist */,
 				4FFF7360218C7CE6002E3827 /* SupportingFiles */,
 			);
@@ -158,7 +320,9 @@
 		4FFF7360218C7CE6002E3827 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4FD88EA02194786500F6A320 /* fonts */,
 				4FFF7361218C7D22002E3827 /* GoogleService-Info.plist */,
+				4FD88EC521947F7C00F6A320 /* Extensions.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -285,9 +449,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FFF733D218C7B33002E3827 /* LaunchScreen.storyboard in Resources */,
+				4FD88EB52194789000F6A320 /* Exo2-Light.ttf in Resources */,
+				4FD88EBE2194789000F6A320 /* Exo2-ExtraLightItalic.ttf in Resources */,
+				4FD88EBA2194789000F6A320 /* Exo2-ExtraBoldItalic.ttf in Resources */,
+				4FD88EC22194789000F6A320 /* Exo2-Italic.ttf in Resources */,
+				4FD88EB82194789000F6A320 /* Exo2-BlackItalic.ttf in Resources */,
+				4FD88EC32194789000F6A320 /* Exo2-MediumItalic.ttf in Resources */,
 				4FFF7362218C7D22002E3827 /* GoogleService-Info.plist in Resources */,
 				4FFF733A218C7B33002E3827 /* Assets.xcassets in Resources */,
+				4FD88EBF2194789000F6A320 /* Exo2-LightItalic.ttf in Resources */,
+				4FD88EC02194789000F6A320 /* Exo2-ExtraLight.ttf in Resources */,
 				4FFF7338218C7B32002E3827 /* Main.storyboard in Resources */,
+				4FD88EB32194789000F6A320 /* Exo2-BoldItalic.ttf in Resources */,
+				4FD88EB62194789000F6A320 /* Exo2-ExtraBold.ttf in Resources */,
+				4FD88EBD2194789000F6A320 /* Exo2-Bold.ttf in Resources */,
+				4FD88EBB2194789000F6A320 /* Exo2-SemiBoldItalic.ttf in Resources */,
+				4FD88EB92194789000F6A320 /* Exo2-Medium.ttf in Resources */,
+				4FD88ECC2196EE9300F6A320 /* SourceSansPro-Bold.ttf in Resources */,
+				4FD88EBC2194789000F6A320 /* Exo2-Thin.ttf in Resources */,
+				4FD88EB42194789000F6A320 /* Exo2-SemiBold.ttf in Resources */,
+				4FD88EC42194789000F6A320 /* Exo2-ThinItalic.ttf in Resources */,
+				4FD88EC12194789000F6A320 /* Exo2-Black.ttf in Resources */,
+				4FD88EB72194789000F6A320 /* Exo2-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +588,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD88E9D2194089200F6A320 /* AuthController.swift in Sources */,
+				4FD88EC621947F7C00F6A320 /* Extensions.swift in Sources */,
+				4FB2A426219707D6005D2C12 /* SignUpCardView.swift in Sources */,
+				4FD88EC8219485C200F6A320 /* AuthButton.swift in Sources */,
 				4FFF7335218C7B32002E3827 /* ViewController.swift in Sources */,
+				4F8C6B58219CB11000BA3130 /* PoolFile.swift in Sources */,
 				4FFF7333218C7B32002E3827 /* AppDelegate.swift in Sources */,
+				4F8C6B5A219EBA1A00BA3130 /* NoSQLExtension.swift in Sources */,
+				4FD88E9F2194402700F6A320 /* AuthTextField.swift in Sources */,
+				4F8C6B56219C209300BA3130 /* DataManager.swift in Sources */,
+				4FD88E9B2194069A00F6A320 /* SignInCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
