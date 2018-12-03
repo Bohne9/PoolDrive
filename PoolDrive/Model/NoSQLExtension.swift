@@ -23,6 +23,12 @@ protocol FirestoreExtension {
     
     func getSource() -> [String : Any]
     
+    func writeToSource()
+    
+    func loadFromSource()
+    
+    func firestorePath() -> String?
+    
 }
 
 
@@ -55,6 +61,23 @@ extension FirestoreExtension {
     func getId() -> String {
         return getString(key: NoSQLConstants.ID.rawValue) ?? ""
     }
+    
+    
+    /// Writes the data stored in getSource() to Firestore
+    /// Before pushing the data into the cloud writeToSource() is called
+    /// - Parameter completion: Completion handler for error handling
+    /// In case error == nil -> No error, successfully pushed data to
+    /// Firestore
+    func pushToFirestore(_ completion : ((Error?) -> Void)?){
+        guard let firestorePath = self.firestorePath() else {
+            return
+        }
+        writeToSource()
+        let reference = DataManager.default.document(path: firestorePath)
+        reference.setData(getSource(), completion: completion)
+    }
+    
+    
     
 }
 
