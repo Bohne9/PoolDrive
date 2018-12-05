@@ -9,12 +9,13 @@
 import FirebaseFirestore
 
 class PoolNode: FirestoreExtension, CustomStringConvertible {
+    
     var description: String{
         var str = "[DocumentID: \(documentId ?? "-")\n"
         for (key, value) in firestoreData {
             str += "\(key): \(value)\n"
         }
-        str += "\n"
+        str += "]\n"
         return str
     }
     
@@ -71,6 +72,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
         self.documentId = documentId
         firestoreData = data
         loadFromSource()
+        hasChanged = false
     }
     
     /// - Returns: If a poolNode has a parent pool, it's path will we returned
@@ -149,7 +151,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     /// - Parameters:
     ///   - path: Path to the collection in firestore
     ///   - completion: Callback for handling the list of poolNodes and error handling
-    class func pullFromFirestore<T: PoolNode>(_ path: String, _ completion: @escaping (_ poolNodes: [T]?, _ error: Error?) -> Void) {
+    class func pullFromFirestore(_ path: String, _ completion: @escaping (_ poolNodes: [PoolNode]?, _ error: Error?) -> Void) {
         let collection = DataManager.default.collection(path: path)
         
         collection.getDocuments { (snapshot, error) in
@@ -159,16 +161,19 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
             }
             
             let documentChanges = snapshot.documentChanges
-            var poolNodes =  [T]()
+            var poolNodes =  [PoolNode]()
             for documentChange in documentChanges {
                 let document = documentChange.document
-                let poolNode = T.init(document.data())
-                poolNode.documentId = document.documentID
+                let poolNode = instantiateType(document.documentID, document.data())
                 poolNodes.append(poolNode)
             }
             completion(poolNodes, nil)
             
         }
+    }
+    
+    internal class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+        return PoolNode(data, documentId: documentID)
     }
     
     

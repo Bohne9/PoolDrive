@@ -12,11 +12,12 @@ import FirebaseStorage
 
 class PoolFile: PoolNode {
     
+    public static let POOLFILE_COLLECTION_NAME = "files"
     public static let FILENAME = "fileName"
     public static let STORAGEURL = "storageUrl"
     
     override var firestoreCollectionName: String{
-        return "files"
+        return PoolFile.POOLFILE_COLLECTION_NAME
     }
     
     var storageUrl: String?{
@@ -53,6 +54,11 @@ class PoolFile: PoolNode {
         fileName = getString(key: PoolFile.FILENAME)
         storageUrl = getString(key: PoolFile.STORAGEURL)
         hasChanged = false
+    }
+    
+
+    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+        return PoolFile(data, documentId: documentID)
     }
 }
 

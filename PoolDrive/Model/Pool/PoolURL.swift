@@ -9,10 +9,11 @@
 import Foundation
 class PoolURL: PoolNode{
     
+    public static let POOLURL_COLLECTION_NAME = "urls"
     private static let POOLURL = "url"
     
     override var firestoreCollectionName: String{
-        return "urls"
+        return PoolURL.POOLURL_COLLECTION_NAME
     }
     
     var url: String?
@@ -25,5 +26,10 @@ class PoolURL: PoolNode{
     override func loadFromSource() {
         url = getString(key: PoolURL.POOLURL)
         super.loadFromSource()
+    }
+    
+    
+    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+        return PoolURL(data, documentId: documentID)
     }
 }

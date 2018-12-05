@@ -14,10 +14,11 @@ import Foundation
 /// It's primary task is to connect other nodes.
 class PoolDot: PoolNode {
     
+    public static let POOLDOT_COLLECTION_NAME = "dots"
     public static let DOTLABEL = "label"
     
     override var firestoreCollectionName: String{
-        return "dots"
+        return PoolDot.POOLDOT_COLLECTION_NAME
     }
     
     var label: String?
@@ -31,5 +32,9 @@ class PoolDot: PoolNode {
     override func loadFromSource() {
         label = getString(key: PoolDot.DOTLABEL)
         super.loadFromSource()
+    }
+    
+    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+        return PoolDot(data, documentId: documentID)
     }
 }

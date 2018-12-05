@@ -10,12 +10,13 @@ import Foundation
 
 class PoolConnection: PoolNode {
     
+    public static let POOLCONNECTION_COLLECTION_NAME = "connections"
     public static let FROMDOCUMENTID = "fromDocumentId"
     public static let TODOCUMENTID = "toDocumentId"
     public static let CONNECTIONCOMMENT = "comment"
     
     override var firestoreCollectionName: String{
-        return "connections"
+        return PoolConnection.POOLCONNECTION_COLLECTION_NAME
     }
     
     var fromDocumentId: String?
@@ -40,6 +41,11 @@ class PoolConnection: PoolNode {
         toDocumentId = getString(key: PoolConnection.TODOCUMENTID)
         comment = getString(key: PoolConnection.CONNECTIONCOMMENT)
         super.loadFromSource()
+    }
+    
+    
+    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+        return PoolConnection(data, documentId: documentID)
     }
     
 }

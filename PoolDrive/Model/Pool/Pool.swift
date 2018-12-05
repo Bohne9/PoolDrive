@@ -10,10 +10,11 @@ import FirebaseFirestore
 
 class Pool: PoolNode {
     
+    public static let POOL_COLLECTION_NAME = "pools"
     public static let POOLNAME = "name"
     
     override var firestoreCollectionName: String {
-        return "pools"
+        return Pool.POOL_COLLECTION_NAME
     }
     
     override var delegate: SnapshotListenerDelegate?{
@@ -128,10 +129,118 @@ class Pool: PoolNode {
         }
     }
     
+    // Pulling the files, comments, connections, etc. for a pool
+    
+    
+    /// Pulls the poolNodes for a pool.
+    /// Warning! This method does not pull the poolNodes for the subPools.
+    /// - Parameter completion: Callback for handling server errors and ui updates
     func getPoolContent(_ completion: ((Error?) -> Void)?){
+        pullFiles(PoolFile.POOLFILE_COLLECTION_NAME, completion)
         
+        pullConnections(PoolConnection.POOLCONNECTION_COLLECTION_NAME, completion)
+        
+        // TODO: pull other poolNode types
     }
     
+    
+    
+    /// Pulls all files for the pool
+    ///
+    /// - Parameters:
+    ///   - pathExtension: pathExtension for poolNode Type: File
+    ///   - completion: Callback for hadnling ui updates or error handling
+    private func pullFiles(_ pathExtension: String,_ completion: ((Error?) -> Void)?){
+        guard let firestorePath = firestorePath() else {
+            return
+        }
+        // FirestorePath exists -> start pulling the files
+        PoolFile.pullFromFirestore(firestorePath + "/\(pathExtension)") { (poolNodes, error) in
+            guard let poolNodes = poolNodes else {
+                completion?(error)
+                return
+            }
+            self.files = poolNodes as! [PoolFile]
+        }
+    }
+    
+    
+    /// Pulls all connections for the pool
+    ///
+    /// - Parameters:
+    ///   - pathExtension: pathExtension for poolNode type: Connection
+    ///   - completion: Callback for handling ui updates or error handling
+    private func pullConnections(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
+        guard let firestorePath = firestorePath() else {
+            return
+        }
+        // FirestorePath exists -> start pulling the connections
+        PoolConnection.pullFromFirestore(firestorePath + "/\(pathExtension)") { (poolNodes, error) in
+            guard let poolNodes = poolNodes else {
+                completion?(error)
+                return
+            }
+            self.connections = poolNodes as! [PoolConnection]
+        }
+    }
+    
+    /// Pulls all comments for the pool
+    ///
+    /// - Parameters:
+    ///   - pathExtension: pathExtension for poolNode type: comments
+    ///   - completion: Callback for handling ui updates or error handling
+    private func pullComments(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
+        guard let firestorePath = firestorePath() else {
+            return
+        }
+        // FirestorePath exists -> start pulling the connections
+        PoolComment.pullFromFirestore(firestorePath + "/\(pathExtension)") { (poolNodes, error) in
+            guard let poolNodes = poolNodes else {
+                completion?(error)
+                return
+            }
+            self.comments = poolNodes as! [PoolComment]
+        }
+    }
+    
+    /// Pulls all dots for the pool
+    ///
+    /// - Parameters:
+    ///   - pathExtension: pathExtension for poolNode type: dots
+    ///   - completion: Callback for handling ui updates or error handling
+    private func pullDots(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
+        guard let firestorePath = firestorePath() else {
+            return
+        }
+        // FirestorePath exists -> start pulling the connections
+        PoolDot.pullFromFirestore(firestorePath + "/\(pathExtension)") { (poolNodes, error) in
+            guard let poolNodes = poolNodes else {
+                completion?(error)
+                return
+            }
+            self.dots = poolNodes as! [PoolDot]
+        }
+    }
+    
+    
+    /// Pulls all url for the pool
+    ///
+    /// - Parameters:
+    ///   - pathExtension: pathExtension for poolNode type: URL
+    ///   - completion: Callback for handling ui updates or error handling
+    private func pullURL(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
+        guard let firestorePath = firestorePath() else {
+            return
+        }
+        // FirestorePath exists -> start pulling the connections
+        PoolURL.pullFromFirestore(firestorePath + "/\(pathExtension)") { (poolNodes, error) in
+            guard let poolNodes = poolNodes else {
+                completion?(error)
+                return
+            }
+            self.urls = poolNodes as! [PoolURL]
+        }
+    }
     
     private func clear(){
         files = []
@@ -140,6 +249,10 @@ class Pool: PoolNode {
         urls = []
         dots = []
         subPools = []
+    }
+    
+    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+        return Pool(data, documentId: documentID)
     }
 }
 
