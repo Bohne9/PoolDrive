@@ -15,6 +15,7 @@ enum NoSQLConstants: String {
     case USERID = "userId"
     case ID = "id"
     case TIMESTAMP = "timestamp"
+    case TITLE = "title"
 }
 
 protocol FirestoreExtension {
@@ -53,6 +54,10 @@ extension FirestoreExtension {
     ///     If USERID has no value an empty string will be returned.
     func getUserId() -> String {
         return getString(key: NoSQLConstants.USERID.rawValue) ?? ""
+    }
+    
+    func getTitle() -> String {
+        return getString(key: NoSQLConstants.TITLE.rawValue) ?? ""
     }
     
     

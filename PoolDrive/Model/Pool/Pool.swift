@@ -17,77 +17,71 @@ class Pool: PoolNode {
         return Pool.POOL_COLLECTION_NAME
     }
     
-    override var delegate: SnapshotListenerDelegate?{
+    override var snapshotListenerDelegate: SnapshotListenerDelegate?{
         didSet{
             forEachSupNode { (poolNode) in
-                poolNode.delegate = delegate
+                poolNode.snapshotListenerDelegate = snapshotListenerDelegate
             }
         }
     }
     
-    private var poolName: String?{
+    var poolName: String?{
         didSet{ hasChanged = true }
     }
     
-    private var files = [PoolFile]()
+    private(set) var files = [PoolFile]()
     
-    private var comments = [PoolComment]()
+    private(set) var comments = [PoolComment]()
     
-    private var connections = [PoolConnection]()
+    private(set) var connections = [PoolConnection]()
     
-    private var urls = [PoolURL]()
+    private(set) var urls = [PoolURL]()
     
-    private var dots = [PoolDot]()
+    private(set) var dots = [PoolDot]()
     
-    private var subPools = [Pool]()
+    private(set) var subPools = [Pool]()
     
+    
+    private var merge: [PoolNode]?
+    
+    var poolNodes: [PoolNode] {
+        guard let merge = self.merge else {
+            self.merge = self.mergePoolNodes()
+            return self.merge!
+        }
+        return merge
+    }
+    
+    
+    /// Returns the total amount of poolNodes for one specific pool
+    var totalPoolNodeCount: Int{
+        get {
+            var count = 0
+            count += files.count
+            count += comments.count
+            count += connections.count
+            count += urls.count
+            count += dots.count
+            count += subPools.count
+            
+            return count
+        }
+    }
+    
+    
+    /// Pushes the data that changed inside of the current pool and all subpool to firestore
+    ///
+    /// - Parameter completion: Callback
     override func pushToFirestore(_ completion: ((Error?) -> Void)?) {
+        print(firestorePath())
         super.pushToFirestore(completion)
         
-        pushFilesToFirestore(completion)
-        pushCommentsToFirestore(completion)
-        pushUrlsToFirestore(completion)
-        pushDotsToFirestore(completion)
-        pushConnectionsToFirestore(completion)
+        forEachSupNode { (poolNode) in
+            poolNode.pushToFirestore(completion)
+        }
         
-        pushSubPoolsToFirestore(completion)
     }
     
-    private func pushFilesToFirestore(_ completion: ((Error?) -> Void)?){
-        for file in files {
-            file.pushToFirestore(completion)
-        }
-    }
-    
-    private func pushCommentsToFirestore(_ completion: ((Error?) -> Void)?){
-        for comment in comments {
-            comment.pushToFirestore(completion)
-        }
-    }
-    
-    private func pushConnectionsToFirestore(_ completion: ((Error?) -> Void)?){
-        for connection in connections {
-            connection.pushToFirestore(completion)
-        }
-    }
-    
-    private func pushUrlsToFirestore(_ completion: ((Error?) -> Void)?){
-        for url in urls {
-            url.pushToFirestore(completion)
-        }
-    }
-    
-    private func pushDotsToFirestore(_ completion: ((Error?) -> Void)?){
-        for dot in dots {
-            dot.pushToFirestore(completion)
-        }
-    }
-    
-    private func pushSubPoolsToFirestore(_ completion: ((Error?) -> Void)?){
-        for subPool in subPools {
-            subPool.pushToFirestore(completion)
-        }
-    }
 
     
     override func writeToSource() {
@@ -117,7 +111,7 @@ class Pool: PoolNode {
         }
         return super.firestorePath()
     }
-
+    
     private func forEachSupNode(_ action: (PoolNode) -> Void) {
         files.forEach(action)
         comments.forEach(action)
@@ -135,14 +129,28 @@ class Pool: PoolNode {
     /// Pulls the poolNodes for a pool.
     /// Warning! This method does not pull the poolNodes for the subPools.
     /// - Parameter completion: Callback for handling server errors and ui updates
-    func getPoolContent(_ completion: ((Error?) -> Void)?){
-        pullFiles(PoolFile.POOLFILE_COLLECTION_NAME, completion)
+    func getPoolContent(_ completionNodes: ((Error?) -> Void)?, _ completion: (() -> Void)?){
+        var finishCount = 0
         
-        pullConnections(PoolConnection.POOLCONNECTION_COLLECTION_NAME, completion)
+        let cm: ((Error?) -> Void)? = { (error: Error?) in
+            completionNodes?(error)
+            finishCount += 1
+            if (finishCount == 5){
+                completion?()
+            }
+        }
         
-        // TODO: pull other poolNode types
+        pullFiles(PoolFile.POOLFILE_COLLECTION_NAME, cm)
+        
+        pullConnections(PoolConnection.POOLCONNECTION_COLLECTION_NAME, cm)
+        
+        pullComments(PoolComment.POOLCOMMENT_COLLECTION_NAME, cm)
+        
+        pullDots(PoolDot.POOLDOT_COLLECTION_NAME, cm)
+        
+        pullURL(PoolURL.POOLURL_COLLECTION_NAME, cm)
+        
     }
-    
     
     
     /// Pulls all files for the pool
@@ -152,6 +160,7 @@ class Pool: PoolNode {
     ///   - completion: Callback for hadnling ui updates or error handling
     private func pullFiles(_ pathExtension: String,_ completion: ((Error?) -> Void)?){
         guard let firestorePath = firestorePath() else {
+            completion?(NoFirestorePathError())
             return
         }
         // FirestorePath exists -> start pulling the files
@@ -161,6 +170,7 @@ class Pool: PoolNode {
                 return
             }
             self.files = poolNodes as! [PoolFile]
+            completion?(nil)
         }
     }
     
@@ -172,6 +182,7 @@ class Pool: PoolNode {
     ///   - completion: Callback for handling ui updates or error handling
     private func pullConnections(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
         guard let firestorePath = firestorePath() else {
+            completion?(NoFirestorePathError())
             return
         }
         // FirestorePath exists -> start pulling the connections
@@ -181,6 +192,7 @@ class Pool: PoolNode {
                 return
             }
             self.connections = poolNodes as! [PoolConnection]
+            completion?(nil)
         }
     }
     
@@ -191,6 +203,7 @@ class Pool: PoolNode {
     ///   - completion: Callback for handling ui updates or error handling
     private func pullComments(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
         guard let firestorePath = firestorePath() else {
+            completion?(NoFirestorePathError())
             return
         }
         // FirestorePath exists -> start pulling the connections
@@ -200,6 +213,7 @@ class Pool: PoolNode {
                 return
             }
             self.comments = poolNodes as! [PoolComment]
+            completion?(nil)
         }
     }
     
@@ -210,6 +224,7 @@ class Pool: PoolNode {
     ///   - completion: Callback for handling ui updates or error handling
     private func pullDots(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
         guard let firestorePath = firestorePath() else {
+            completion?(NoFirestorePathError())
             return
         }
         // FirestorePath exists -> start pulling the connections
@@ -219,6 +234,7 @@ class Pool: PoolNode {
                 return
             }
             self.dots = poolNodes as! [PoolDot]
+            completion?(nil)
         }
     }
     
@@ -230,6 +246,7 @@ class Pool: PoolNode {
     ///   - completion: Callback for handling ui updates or error handling
     private func pullURL(_ pathExtension: String, _ completion: ((Error?) -> Void)?) {
         guard let firestorePath = firestorePath() else {
+            completion?(NoFirestorePathError())
             return
         }
         // FirestorePath exists -> start pulling the connections
@@ -239,22 +256,172 @@ class Pool: PoolNode {
                 return
             }
             self.urls = poolNodes as! [PoolURL]
+            completion?(nil)
         }
     }
     
-    private func clear(){
-        files = []
-        comments = []
-        connections = []
-        urls = []
-        dots = []
-        subPools = []
-    }
     
     override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
         return Pool(data, documentId: documentID)
     }
+    
+    
+    //+++++++++++++++++++++++++++++++++++++++++++++
+    //+++++++++++++++++++++++++++++++++++++++++++++
+    // Helper Methods for adding poolNodes to the current pool.
+    //+++++++++++++++++++++++++++++++++++++++++++++
+    //+++++++++++++++++++++++++++++++++++++++++++++
+    
+    private func prepareNewPoolNode(_ poolNode: PoolNode){
+        poolNode.parent = self
+        merge?.append(poolNode)
+    }
+    
+    func addFile(_ file: PoolFile, _ autoPush: Bool = false, _ completion: ((Error?) -> Void)? = nil) {
+        prepareNewPoolNode(file)
+        files.append(file)
+        if autoPush {
+            self.pushToFirestore(completion)
+        }
+    }
+    
+    func addComment(_ comment: PoolComment, _ autoPush: Bool = false, _ completion: ((Error?) -> Void)? = nil) {
+        prepareNewPoolNode(comment)
+        comments.append(comment)
+        if autoPush {
+            self.pushToFirestore(completion)
+        }
+    }
+    
+    func addConnection(_ connection: PoolConnection, _ autoPush: Bool = false, _ completion: ((Error?) -> Void)? = nil) {
+        prepareNewPoolNode(connection)
+        connections.append(connection)
+        if autoPush {
+            self.pushToFirestore(completion)
+        }
+    }
+    
+    func addDot(_ dot: PoolDot, _ autoPush: Bool = false, _ completion: ((Error?) -> Void)? = nil) {
+        prepareNewPoolNode(dot)
+        dots.append(dot)
+        if autoPush {
+            self.pushToFirestore(completion)
+        }
+    }
+    
+    func addUrl(_ url: PoolURL, _ autoPush: Bool = false, _ completion: ((Error?) -> Void)? = nil) {
+        prepareNewPoolNode(url)
+        urls.append(url)
+        if autoPush {
+            self.pushToFirestore(completion)
+        }
+    }
 }
 
 
+
+
+
+
+
+// Sorting Pools
+extension Pool {
+    
+    
+    /// Merges all the poolNodes
+    ///
+    /// - Returns:
+    private func mergePoolNodes() -> [PoolNode] {
+        var merge = [PoolNode]()
+        merge.append(contentsOf: files)
+        merge.append(contentsOf: comments)
+        merge.append(contentsOf: connections)
+        merge.append(contentsOf: dots)
+        merge.append(contentsOf: urls)
+        merge.append(contentsOf: subPools)
+        return merge
+    }
+    
+    
+    /// Returns the merged poolNodes sorted by the timestamp value
+    /// Ordering: Ascending (Newest first)
+    /// - Returns: List of sorted poolNodes
+    func getByNewest() -> [PoolNode] {
+        merge = nil
+        var nodes = poolNodes
+        nodes.sort(by: { (node1, node2) -> Bool in
+            return node1.sortByNewest(node2)
+        })
+        return poolNodes
+        
+    }
+    
+    
+    /// Returns the merged poolNodes sorted by the timestamp value
+    /// Ordering: Descending (Oldest first)
+    /// - Returns: List of sorted poolNodes
+    func getByOldest() -> [PoolNode] {
+        merge = nil
+        var nodes = poolNodes
+        nodes.sort(by: { (node1, node2) -> Bool in
+            return node1.sortByOldest(node2)
+        })
+        return poolNodes
+    }
+    
+    
+    /// Returns the merged poolNodes sorted by the title
+    /// Ordering: Ascending ('A' first, ...)
+    /// - Returns: List of sorted poolNodes
+    func getByTitle() -> [PoolNode] {
+        merge = nil
+        var nodes = poolNodes
+        nodes.sort { (node1, node2) -> Bool in
+            return node1.sortByName(node2)
+        }
+        return poolNodes
+    }
+    
+    
+ 
+    
+    
+    
+    //    private func pushFilesToFirestore(_ completion: ((Error?) -> Void)?){
+    //        for file in files {
+    //            file.pushToFirestore(completion)
+    //        }
+    //    }
+    //
+    //    private func pushCommentsToFirestore(_ completion: ((Error?) -> Void)?){
+    //        for comment in comments {
+    //            comment.pushToFirestore(completion)
+    //        }
+    //    }
+    //
+    //    private func pushConnectionsToFirestore(_ completion: ((Error?) -> Void)?){
+    //        for connection in connections {
+    //            connection.pushToFirestore(completion)
+    //        }
+    //    }
+    //
+    //    private func pushUrlsToFirestore(_ completion: ((Error?) -> Void)?){
+    //        for url in urls {
+    //            url.pushToFirestore(completion)
+    //        }
+    //    }
+    //
+    //    private func pushDotsToFirestore(_ completion: ((Error?) -> Void)?){
+    //        for dot in dots {
+    //            dot.pushToFirestore(completion)
+    //        }
+    //    }
+    //
+    //    private func pushSubPoolsToFirestore(_ completion: ((Error?) -> Void)?){
+    //        for subPool in subPools {
+    //            subPool.pushToFirestore(completion)
+    //        }
+    //    }
+
+}
 

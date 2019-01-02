@@ -15,10 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var `default`: AppDelegate!
     
     var window: UIWindow?
+    var viewController: ViewController!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        applicationSetup()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        window?.rootViewController = viewController
+        
+        window?.makeKeyAndVisible()
+        
+        return true
+    }
+    
+    private func applicationSetup(){
         FirebaseApp.configure()
         
         if Auth.auth().currentUser != nil {
@@ -29,7 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DataManager.initDataManager()
         
-        return true
+        viewController = ViewController(navigationBarClass: nil, toolbarClass: nil)
+        
+        DataManager.default.delegate = viewController
+        
+        DataManager.default.getRootPoolsFromFirestore { (error) in
+            guard let error = error else {
+                return
+            }
+            DataManager.default.processError(error)
+        }
     }
     
     

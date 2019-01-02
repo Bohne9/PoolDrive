@@ -20,6 +20,8 @@ class DataManager {
         }
     }
     
+    var delegate: DataManagerDelegate?
+    
     private init() {
         print("DataManager initalised...")
         
@@ -85,6 +87,18 @@ class DataManager {
         return storageReference
     }
     
+    func storageDownload(path: String, to url: URL, completion: @escaping ((URL?, Error?) -> Void)) -> StorageReference {
+        let storageReference = self.storageReference(for: path)
+        storageReference.write(toFile: url, completion: completion)
+        return storageReference
+    }
+    
+    func storageDownloadMetadata(path: String, completion: @escaping ((StorageMetadata?, Error?) -> Void)) -> StorageReference {
+        let storageReference = self.storageReference(for: path)
+        storageReference.getMetadata(completion: completion)
+        return storageReference
+    }
+    
     
     /// Downloads the 'root'-pools of the user (in case he is logged in)
     /// 'root'-pools := /pools/{userID}/pools/...
@@ -97,7 +111,6 @@ class DataManager {
         let collection = self.collection(path: path)
         // Get the documents
         collection.getDocuments { (snapshot, error) in
-            completion(error)
             guard let snapshot = snapshot else {
                 return
             }
@@ -112,6 +125,9 @@ class DataManager {
                 DataManager.default.processInfo("Pool: \(pool)")
             }
             
+            completion(error)
+            
+            self.delegate?.dataManager(self.rootPools)
         }
     }
     
@@ -137,5 +153,65 @@ extension DataManager {
     
     func processInfo(_ info: String) {
         print("[INFO] - \(info)")
+    }
+    
+    func processWarning(_ warning: String) {
+        print("[WARNING] - \(warning)")
+    }
+}
+
+
+extension DataManager {
+    
+    
+    func writeToTemporaryFile(_ url: URL, _ completion: @escaping (URL) -> Void){
+        
+        let urlString = url.absoluteString
+        
+        DispatchQueue.global(qos: .default).async(execute: {
+            //All stuff here
+            
+            let url=NSURL(string: urlString);
+            let urlData=NSData(contentsOf: url! as URL);
+            
+            if((urlData) != nil)
+            {
+                let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                
+                let fileName = urlString as NSString;
+                
+                let filePath="\(documentsPath)/\(fileName.lastPathComponent)";
+                
+                let fileExists = FileManager().fileExists(atPath: filePath)
+                
+                if(fileExists){
+                    
+                    // File is already downloaded
+                    completion(URL(fileURLWithPath: filePath))
+                }
+                else{
+                    
+                    //download
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        
+                        print(filePath)
+                        urlData?.write(toFile: filePath, atomically: true);
+                        completion(URL(fileURLWithPath: filePath))
+                    })
+                }
+            }
+        })
+    }
+    
+    
+}
+
+
+protocol DataManagerDelegate {
+    func dataManager(_ recievedRootPools: [Pool])
+}
+extension DataManagerDelegate {
+    func dataManager(_ recievedRootPools: [Pool]) {
+        
     }
 }

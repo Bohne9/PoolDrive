@@ -19,13 +19,15 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
         return str
     }
     
+    var delegate: NodeDelegate?
+    
     var collectionName: String{
         return firestoreCollectionName
     }
     
     private var documentSnapshotListener: ListenerRegistration?
     
-    var delegate: SnapshotListenerDelegate?
+    var snapshotListenerDelegate: SnapshotListenerDelegate?
     
     var hasChanged: Bool = false{
         didSet{
@@ -51,6 +53,15 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
         didSet{ hasChanged = true }
     }
     
+    var title: String {
+        get {
+            return ""
+        }
+        set {
+            
+        }
+    }
+    
     var lastChange: Timestamp?{
         didSet{ hasChanged = true }
     }
@@ -66,7 +77,11 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     }
     
     /// Stores the data that comes from Firestore
-    internal var firestoreData: [String : Any] = [:]
+    internal var firestoreData: [String : Any] = [:] {
+        didSet{
+            delegate?.node(self, didUpdateNodeData: firestoreData)
+        }
+    }
     
     required init(_ data: [String : Any], documentId: String? = nil) {
         self.documentId = documentId
@@ -80,6 +95,13 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
         return parent?.firestorePath()
     }
     
+    func collectionFirestorePath() -> String? {
+        guard let parentPath = parentFirestorePath() else {
+            return nil
+        }
+        return parentPath + "/" + firestoreCollectionName
+    }
+    
     /// - Returns: The Dicionary where the values from Firestore are stored
     func getSource() -> [String : Any] {
         return firestoreData
@@ -89,6 +111,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     func writeToSource() {
         firestoreData[NoSQLConstants.USERID.rawValue] = userId
         firestoreData[NoSQLConstants.TIMESTAMP.rawValue] = timestamp
+        firestoreData[NoSQLConstants.TITLE.rawValue] = title
     }
     
     /// Loads the values stored in getSource() into the local
@@ -98,6 +121,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     func loadFromSource() {
         userId = getUserId()
         timestamp = getTimestamp()
+        title = getTitle()
         hasChanged = false
     }
     
@@ -127,7 +151,12 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
         
         documentSnapshotListener = documentReference.addSnapshotListener { (snapshot, error) in
             self.snapshot(snapshot, error)
-            self.delegate?.snapshot(snapshot, error)
+            self.snapshotListenerDelegate?.snapshot(snapshot, error)
+            if snapshot != nil {
+                self.delegate?.node(self, didRecievedSnapshotUpdate: snapshot!)
+            }else {
+                self.delegate?.node(self, didRecievedSnapshotError: error!)
+            }
         }
     }
     
@@ -138,11 +167,21 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     func pushToFirestore(_ completion: ((Error?) -> Void)?) {
         if !hasChanged {
             completion?(nil)
-        } else if documentId == nil && parentFirestorePath() != nil{
-            createFirestoreDocument(completion)
+            delegate?.node(self, didPushDataToFirestore: nil)
+        } else if documentId == nil && parentFirestorePath() != nil {
+            print("Create firestore doc")
+            createFirestoreDocument { (error) in
+                self.delegate?.node(self, didPushDataToFirestore: error)
+                completion?(error)
+            }
         }else {
+            print("Push data to existing doc")
             // If something has changed -> push the data to firestore
-            (self as FirestoreExtension).pushToFirestore(completion)
+            (self as FirestoreExtension).pushToFirestore { (error) in
+                self.delegate?.node(self, didPushDataToFirestore: error)
+                completion?(error)
+            }
+            hasChanged = false
         }
     }
     
@@ -179,16 +218,16 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     
     /// Called when the PoolNode does not has an documentId. In this case a
     func createFirestoreDocument(_ completion: ((Error?) -> Void)?){
-        guard let parentFirestorePath = self.parentFirestorePath() else {
+        guard let collectionPath = self.collectionFirestorePath() else {
             return
         }
         
-        let collection = DataManager.default.collection(path: parentFirestorePath)
+        let collection = DataManager.default.collection(path: collectionPath)
         // Save the data in the variables in the firestoreData dictionary
         writeToSource()
         var documentRef: DocumentReference?
         documentRef = collection.addDocument(data: getSource()) { (error) in
-            guard error != nil else {
+            guard error == nil else {
                 DataManager.default.processError(error!, "Error while adding a firestore Document")
                 completion?(error!)
                 return
@@ -219,6 +258,32 @@ extension PoolNode: SnapshotListenerDelegate {
         DataManager.default.processError(error, "Error occured during an snapshot listener event.")
     }
     
+}
+
+
+
+// Sorting algos
+extension PoolNode {
+    
+    func sortByNewest(_ other: PoolNode) -> Bool {
+        guard let t1 = timestamp?.dateValue(), let t2 = other.timestamp?.dateValue() else {
+            return false
+        }
+        return t1 < t2
+    }
+    
+    func sortByOldest(_ other: PoolNode) -> Bool {
+        guard let t1 = timestamp?.dateValue(), let t2 = other.timestamp?.dateValue() else {
+            return false
+        }
+        return t1 > t2
+    }
+    
+    func sortByName(_ other: PoolNode) -> Bool {
+        let t1 = title
+        let t2 = other.title
+        return t1 < t2
+    }
 }
 
 
@@ -261,3 +326,5 @@ extension SnapshotListenerDelegate {
 
 
 
+
+class NoFirestorePathError: Error { }

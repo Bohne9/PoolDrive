@@ -8,10 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		3F3A4E38C0D815C9167E6323 /* Pods_PoolDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752E8760D14BAD3D65FACD99 /* Pods_PoolDrive.framework */; };
+		4F182ABB21BD676000CDC25F /* PoolCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F182ABA21BD676000CDC25F /* PoolCollectionViewController.swift */; };
+		4F182ABE21BEF76700CDC25F /* PoolNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F182ABD21BEF76700CDC25F /* PoolNavigationBar.swift */; };
+		4F3B911521A55C0900780001 /* PoolNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B911421A55C0900780001 /* PoolNode.swift */; };
+		4F3D0DD021D6BF95007654B8 /* FileProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D0DCF21D6BF95007654B8 /* FileProviderExtension.swift */; };
+		4F3D0DD221D6BF95007654B8 /* FileProviderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D0DD121D6BF95007654B8 /* FileProviderItem.swift */; };
+		4F3D0DD421D6BF95007654B8 /* FileProviderEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D0DD321D6BF95007654B8 /* FileProviderEnumerator.swift */; };
+		4F3D0DDE21D6BF95007654B8 /* DocumentActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D0DDD21D6BF95007654B8 /* DocumentActionViewController.swift */; };
+		4F3D0DE121D6BF95007654B8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D0DDF21D6BF95007654B8 /* MainInterface.storyboard */; };
+		4F3D0DE521D6BF95007654B8 /* DriveUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3D0DDB21D6BF95007654B8 /* DriveUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F3D0DE821D6BF95007654B8 /* Drive.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4F3D0DCD21D6BF95007654B8 /* Drive.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4F3D0DF021D6C433007654B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3D0DEF21D6C433007654B8 /* Assets.xcassets */; };
+		4F3D0DF221DA2636007654B8 /* NodeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3D0DF121DA2636007654B8 /* NodeDelegate.swift */; };
+		4F42A4F521B15338008A44B6 /* PoolURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F42A4F421B15338008A44B6 /* PoolURL.swift */; };
+		4F5A275021A4413400AB69E4 /* Pool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A274F21A4413400AB69E4 /* Pool.swift */; };
 		4F8C6B56219C209300BA3130 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C6B55219C209300BA3130 /* DataManager.swift */; };
 		4F8C6B58219CB11000BA3130 /* PoolFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C6B57219CB11000BA3130 /* PoolFile.swift */; };
 		4F8C6B5A219EBA1A00BA3130 /* NoSQLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8C6B59219EBA1A00BA3130 /* NoSQLExtension.swift */; };
+		4FA2F66F21C4EB8700A42E7B /* PoolNodeCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2F66E21C4EB8700A42E7B /* PoolNodeCellCollectionViewCell.swift */; };
+		4FA2F67121CBE37C00A42E7B /* PoolFileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2F67021CBE37C00A42E7B /* PoolFileController.swift */; };
+		4FA2F67421CD6A3A00A42E7B /* PoolFileInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2F67321CD6A3A00A42E7B /* PoolFileInfoCollectionViewCell.swift */; };
+		4FA30CD421D0272F003699C1 /* PoolFileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA30CD321D0272F003699C1 /* PoolFileImageCollectionViewCell.swift */; };
 		4FB2A426219707D6005D2C12 /* SignUpCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB2A425219707D6005D2C12 /* SignUpCardView.swift */; };
+		4FD7B08921AAF28D006FA66F /* PoolComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B08821AAF28D006FA66F /* PoolComment.swift */; };
+		4FD7B08B21AD286C006FA66F /* PoolConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B08A21AD286C006FA66F /* PoolConnection.swift */; };
+		4FD7B08D21B119D9006FA66F /* PoolDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7B08C21B119D9006FA66F /* PoolDot.swift */; };
 		4FD88E9B2194069A00F6A320 /* SignInCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88E9A2194069A00F6A320 /* SignInCardView.swift */; };
 		4FD88E9D2194089200F6A320 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88E9C2194089200F6A320 /* AuthController.swift */; };
 		4FD88E9F2194402700F6A320 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD88E9E2194402700F6A320 /* AuthTextField.swift */; };
@@ -38,8 +59,6 @@
 		4FD88ECC2196EE9300F6A320 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD88ECB2196EE9300F6A320 /* SourceSansPro-Bold.ttf */; };
 		4FFF7333218C7B32002E3827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7332218C7B32002E3827 /* AppDelegate.swift */; };
 		4FFF7335218C7B32002E3827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7334218C7B32002E3827 /* ViewController.swift */; };
-		4FFF7338218C7B32002E3827 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF7336218C7B32002E3827 /* Main.storyboard */; };
-		4FFF733A218C7B33002E3827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF7339218C7B33002E3827 /* Assets.xcassets */; };
 		4FFF733D218C7B33002E3827 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */; };
 		4FFF7348218C7B33002E3827 /* PoolDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7347218C7B33002E3827 /* PoolDriveTests.swift */; };
 		4FFF7353218C7B33002E3827 /* PoolDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF7352218C7B33002E3827 /* PoolDriveUITests.swift */; };
@@ -49,6 +68,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4F3D0DE321D6BF95007654B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FFF7327218C7B32002E3827 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F3D0DDA21D6BF95007654B8;
+			remoteInfo = DriveUI;
+		};
+		4F3D0DE621D6BF95007654B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FFF7327218C7B32002E3827 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F3D0DCC21D6BF95007654B8;
+			remoteInfo = Drive;
+		};
 		4FFF7344218C7B33002E3827 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4FFF7327218C7B32002E3827 /* Project object */;
@@ -65,11 +98,58 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4FA30CFB21D68F9B003699C1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4F3D0DE521D6BF95007654B8 /* DriveUI.appex in Embed App Extensions */,
+				4F3D0DE821D6BF95007654B8 /* Drive.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4F182ABA21BD676000CDC25F /* PoolCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolCollectionViewController.swift; sourceTree = "<group>"; };
+		4F182ABD21BEF76700CDC25F /* PoolNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolNavigationBar.swift; sourceTree = "<group>"; };
+		4F3B911421A55C0900780001 /* PoolNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolNode.swift; sourceTree = "<group>"; };
+		4F3D0DCD21D6BF95007654B8 /* Drive.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Drive.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3D0DCF21D6BF95007654B8 /* FileProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderExtension.swift; sourceTree = "<group>"; };
+		4F3D0DD121D6BF95007654B8 /* FileProviderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderItem.swift; sourceTree = "<group>"; };
+		4F3D0DD321D6BF95007654B8 /* FileProviderEnumerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderEnumerator.swift; sourceTree = "<group>"; };
+		4F3D0DD521D6BF95007654B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3D0DD621D6BF95007654B8 /* Drive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Drive.entitlements; sourceTree = "<group>"; };
+		4F3D0DDB21D6BF95007654B8 /* DriveUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DriveUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F3D0DDD21D6BF95007654B8 /* DocumentActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentActionViewController.swift; sourceTree = "<group>"; };
+		4F3D0DE021D6BF95007654B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4F3D0DE221D6BF95007654B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F3D0DEF21D6C433007654B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F3D0DF121DA2636007654B8 /* NodeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDelegate.swift; sourceTree = "<group>"; };
+		4F42A4F421B15338008A44B6 /* PoolURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolURL.swift; sourceTree = "<group>"; };
+		4F5A274F21A4413400AB69E4 /* Pool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pool.swift; sourceTree = "<group>"; };
 		4F8C6B55219C209300BA3130 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4F8C6B57219CB11000BA3130 /* PoolFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolFile.swift; sourceTree = "<group>"; };
 		4F8C6B59219EBA1A00BA3130 /* NoSQLExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSQLExtension.swift; sourceTree = "<group>"; };
+		4FA2F66E21C4EB8700A42E7B /* PoolNodeCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolNodeCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		4FA2F67021CBE37C00A42E7B /* PoolFileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolFileController.swift; sourceTree = "<group>"; };
+		4FA2F67321CD6A3A00A42E7B /* PoolFileInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolFileInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		4FA30CD321D0272F003699C1 /* PoolFileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolFileImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4FA30D0221D6BBBB003699C1 /* FileProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderExtension.swift; sourceTree = "<group>"; };
+		4FA30D0421D6BBBB003699C1 /* FileProviderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderItem.swift; sourceTree = "<group>"; };
+		4FA30D0621D6BBBB003699C1 /* FileProviderEnumerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderEnumerator.swift; sourceTree = "<group>"; };
+		4FA30D0821D6BBBB003699C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FA30D0921D6BBBB003699C1 /* Pool_Drive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pool_Drive.entitlements; sourceTree = "<group>"; };
+		4FA30D1021D6BBBB003699C1 /* DocumentActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentActionViewController.swift; sourceTree = "<group>"; };
+		4FA30D1321D6BBBB003699C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		4FA30D1521D6BBBB003699C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FB2A425219707D6005D2C12 /* SignUpCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCardView.swift; sourceTree = "<group>"; };
+		4FD7B08821AAF28D006FA66F /* PoolComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolComment.swift; sourceTree = "<group>"; };
+		4FD7B08A21AD286C006FA66F /* PoolConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolConnection.swift; sourceTree = "<group>"; };
+		4FD7B08C21B119D9006FA66F /* PoolDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolDot.swift; sourceTree = "<group>"; };
 		4FD88E9A2194069A00F6A320 /* SignInCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCardView.swift; sourceTree = "<group>"; };
 		4FD88E9C2194089200F6A320 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		4FD88E9E2194402700F6A320 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
@@ -97,8 +177,6 @@
 		4FFF732F218C7B32002E3827 /* PoolDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoolDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FFF7332218C7B32002E3827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FFF7334218C7B32002E3827 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4FFF7337218C7B32002E3827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4FFF7339218C7B33002E3827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4FFF733C218C7B33002E3827 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FFF733E218C7B33002E3827 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FFF7343218C7B33002E3827 /* PoolDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoolDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +198,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4F3D0DCA21D6BF95007654B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F3D0DD821D6BF95007654B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FFF732C218C7B32002E3827 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,11 +249,96 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4F182ABC21BEF58900CDC25F /* PoolViews */ = {
+			isa = PBXGroup;
+			children = (
+				4F182ABD21BEF76700CDC25F /* PoolNavigationBar.swift */,
+			);
+			path = PoolViews;
+			sourceTree = "<group>";
+		};
+		4F3D0DCE21D6BF95007654B8 /* Drive */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D0DCF21D6BF95007654B8 /* FileProviderExtension.swift */,
+				4F3D0DD121D6BF95007654B8 /* FileProviderItem.swift */,
+				4F3D0DD321D6BF95007654B8 /* FileProviderEnumerator.swift */,
+				4F3D0DD521D6BF95007654B8 /* Info.plist */,
+				4F3D0DD621D6BF95007654B8 /* Drive.entitlements */,
+			);
+			path = Drive;
+			sourceTree = "<group>";
+		};
+		4F3D0DDC21D6BF95007654B8 /* DriveUI */ = {
+			isa = PBXGroup;
+			children = (
+				4F3D0DDD21D6BF95007654B8 /* DocumentActionViewController.swift */,
+				4F3D0DDF21D6BF95007654B8 /* MainInterface.storyboard */,
+				4F3D0DE221D6BF95007654B8 /* Info.plist */,
+			);
+			path = DriveUI;
+			sourceTree = "<group>";
+		};
+		4FA2F66D21C4EB6300A42E7B /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				4FA2F67221CD6A1500A42E7B /* PoolFile */,
+				4FA2F66E21C4EB8700A42E7B /* PoolNodeCellCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		4FA2F67221CD6A1500A42E7B /* PoolFile */ = {
+			isa = PBXGroup;
+			children = (
+				4FA2F67321CD6A3A00A42E7B /* PoolFileInfoCollectionViewCell.swift */,
+				4FA30CD321D0272F003699C1 /* PoolFileImageCollectionViewCell.swift */,
+			);
+			path = PoolFile;
+			sourceTree = "<group>";
+		};
+		4FA30D0121D6BBBB003699C1 /* Pool Drive */ = {
+			isa = PBXGroup;
+			children = (
+				4FA30D0221D6BBBB003699C1 /* FileProviderExtension.swift */,
+				4FA30D0421D6BBBB003699C1 /* FileProviderItem.swift */,
+				4FA30D0621D6BBBB003699C1 /* FileProviderEnumerator.swift */,
+				4FA30D0821D6BBBB003699C1 /* Info.plist */,
+				4FA30D0921D6BBBB003699C1 /* Pool_Drive.entitlements */,
+			);
+			path = "Pool Drive";
+			sourceTree = "<group>";
+		};
+		4FA30D0F21D6BBBB003699C1 /* Pool DriveUI */ = {
+			isa = PBXGroup;
+			children = (
+				4FA30D1021D6BBBB003699C1 /* DocumentActionViewController.swift */,
+				4FA30D1221D6BBBB003699C1 /* MainInterface.storyboard */,
+				4FA30D1521D6BBBB003699C1 /* Info.plist */,
+			);
+			path = "Pool DriveUI";
+			sourceTree = "<group>";
+		};
+		4FD7B08721AAF271006FA66F /* Pool */ = {
+			isa = PBXGroup;
+			children = (
+				4F5A274F21A4413400AB69E4 /* Pool.swift */,
+				4F3B911421A55C0900780001 /* PoolNode.swift */,
+				4F8C6B57219CB11000BA3130 /* PoolFile.swift */,
+				4FD7B08821AAF28D006FA66F /* PoolComment.swift */,
+				4FD7B08A21AD286C006FA66F /* PoolConnection.swift */,
+				4FD7B08C21B119D9006FA66F /* PoolDot.swift */,
+				4F42A4F421B15338008A44B6 /* PoolURL.swift */,
+				4F3D0DF121DA2636007654B8 /* NodeDelegate.swift */,
+			);
+			path = Pool;
+			sourceTree = "<group>";
+		};
 		4FD88E952193698B00F6A320 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4FD7B08721AAF271006FA66F /* Pool */,
 				4F8C6B55219C209300BA3130 /* DataManager.swift */,
-				4F8C6B57219CB11000BA3130 /* PoolFile.swift */,
 				4F8C6B59219EBA1A00BA3130 /* NoSQLExtension.swift */,
 			);
 			path = Model;
@@ -170,8 +347,9 @@
 		4FD88E962193699600F6A320 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FA2F66D21C4EB6300A42E7B /* CollectionViewCells */,
+				4F182ABC21BEF58900CDC25F /* PoolViews */,
 				4FD88E992194067E00F6A320 /* Authentication */,
-				4FFF7336218C7B32002E3827 /* Main.storyboard */,
 				4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -182,6 +360,8 @@
 			children = (
 				4FFF7334218C7B32002E3827 /* ViewController.swift */,
 				4FD88E9C2194089200F6A320 /* AuthController.swift */,
+				4F182ABA21BD676000CDC25F /* PoolCollectionViewController.swift */,
+				4FA2F67021CBE37C00A42E7B /* PoolFileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,7 +369,7 @@
 		4FD88E98219369A200F6A320 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				4FFF7339218C7B33002E3827 /* Assets.xcassets */,
+				4F3D0DEF21D6C433007654B8 /* Assets.xcassets */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -269,6 +449,10 @@
 				4FFF7331218C7B32002E3827 /* PoolDrive */,
 				4FFF7346218C7B33002E3827 /* PoolDriveTests */,
 				4FFF7351218C7B33002E3827 /* PoolDriveUITests */,
+				4FA30D0121D6BBBB003699C1 /* Pool Drive */,
+				4FA30D0F21D6BBBB003699C1 /* Pool DriveUI */,
+				4F3D0DCE21D6BF95007654B8 /* Drive */,
+				4F3D0DDC21D6BF95007654B8 /* DriveUI */,
 				4FFF7330218C7B32002E3827 /* Products */,
 				DED8983D5C0B1A18E10EE998 /* Pods */,
 				1755B86C5A9ADB6693036642 /* Frameworks */,
@@ -281,6 +465,8 @@
 				4FFF732F218C7B32002E3827 /* PoolDrive.app */,
 				4FFF7343218C7B33002E3827 /* PoolDriveTests.xctest */,
 				4FFF734E218C7B33002E3827 /* PoolDriveUITests.xctest */,
+				4F3D0DCD21D6BF95007654B8 /* Drive.appex */,
+				4F3D0DDB21D6BF95007654B8 /* DriveUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,6 +529,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4F3D0DCC21D6BF95007654B8 /* Drive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F3D0DEC21D6BF95007654B8 /* Build configuration list for PBXNativeTarget "Drive" */;
+			buildPhases = (
+				4F3D0DC921D6BF95007654B8 /* Sources */,
+				4F3D0DCA21D6BF95007654B8 /* Frameworks */,
+				4F3D0DCB21D6BF95007654B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Drive;
+			productName = Drive;
+			productReference = 4F3D0DCD21D6BF95007654B8 /* Drive.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		4F3D0DDA21D6BF95007654B8 /* DriveUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F3D0DE921D6BF95007654B8 /* Build configuration list for PBXNativeTarget "DriveUI" */;
+			buildPhases = (
+				4F3D0DD721D6BF95007654B8 /* Sources */,
+				4F3D0DD821D6BF95007654B8 /* Frameworks */,
+				4F3D0DD921D6BF95007654B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriveUI;
+			productName = DriveUI;
+			productReference = 4F3D0DDB21D6BF95007654B8 /* DriveUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4FFF732E218C7B32002E3827 /* PoolDrive */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FFF7357218C7B33002E3827 /* Build configuration list for PBXNativeTarget "PoolDrive" */;
@@ -352,10 +572,13 @@
 				4FFF732C218C7B32002E3827 /* Frameworks */,
 				4FFF732D218C7B32002E3827 /* Resources */,
 				2B32096BC6D2187D1F4E17A0 /* [CP] Embed Pods Frameworks */,
+				4FA30CFB21D68F9B003699C1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4F3D0DE421D6BF95007654B8 /* PBXTargetDependency */,
+				4F3D0DE721D6BF95007654B8 /* PBXTargetDependency */,
 			);
 			name = PoolDrive;
 			productName = PoolDrive;
@@ -410,6 +633,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Jonah Schueller";
 				TargetAttributes = {
+					4F3D0DCC21D6BF95007654B8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4F3D0DDA21D6BF95007654B8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					4FFF732E218C7B32002E3827 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -439,11 +668,28 @@
 				4FFF732E218C7B32002E3827 /* PoolDrive */,
 				4FFF7342218C7B33002E3827 /* PoolDriveTests */,
 				4FFF734D218C7B33002E3827 /* PoolDriveUITests */,
+				4F3D0DCC21D6BF95007654B8 /* Drive */,
+				4F3D0DDA21D6BF95007654B8 /* DriveUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4F3D0DCB21D6BF95007654B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F3D0DD921D6BF95007654B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3D0DE121D6BF95007654B8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FFF732D218C7B32002E3827 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -456,16 +702,15 @@
 				4FD88EB82194789000F6A320 /* Exo2-BlackItalic.ttf in Resources */,
 				4FD88EC32194789000F6A320 /* Exo2-MediumItalic.ttf in Resources */,
 				4FFF7362218C7D22002E3827 /* GoogleService-Info.plist in Resources */,
-				4FFF733A218C7B33002E3827 /* Assets.xcassets in Resources */,
 				4FD88EBF2194789000F6A320 /* Exo2-LightItalic.ttf in Resources */,
 				4FD88EC02194789000F6A320 /* Exo2-ExtraLight.ttf in Resources */,
-				4FFF7338218C7B32002E3827 /* Main.storyboard in Resources */,
 				4FD88EB32194789000F6A320 /* Exo2-BoldItalic.ttf in Resources */,
 				4FD88EB62194789000F6A320 /* Exo2-ExtraBold.ttf in Resources */,
 				4FD88EBD2194789000F6A320 /* Exo2-Bold.ttf in Resources */,
 				4FD88EBB2194789000F6A320 /* Exo2-SemiBoldItalic.ttf in Resources */,
 				4FD88EB92194789000F6A320 /* Exo2-Medium.ttf in Resources */,
 				4FD88ECC2196EE9300F6A320 /* SourceSansPro-Bold.ttf in Resources */,
+				4F3D0DF021D6C433007654B8 /* Assets.xcassets in Resources */,
 				4FD88EBC2194789000F6A320 /* Exo2-Thin.ttf in Resources */,
 				4FD88EB42194789000F6A320 /* Exo2-SemiBold.ttf in Resources */,
 				4FD88EC42194789000F6A320 /* Exo2-ThinItalic.ttf in Resources */,
@@ -584,19 +829,50 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4F3D0DC921D6BF95007654B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3D0DD021D6BF95007654B8 /* FileProviderExtension.swift in Sources */,
+				4F3D0DD221D6BF95007654B8 /* FileProviderItem.swift in Sources */,
+				4F3D0DD421D6BF95007654B8 /* FileProviderEnumerator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F3D0DD721D6BF95007654B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3D0DDE21D6BF95007654B8 /* DocumentActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4FFF732B218C7B32002E3827 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F182ABB21BD676000CDC25F /* PoolCollectionViewController.swift in Sources */,
+				4F42A4F521B15338008A44B6 /* PoolURL.swift in Sources */,
+				4FA2F66F21C4EB8700A42E7B /* PoolNodeCellCollectionViewCell.swift in Sources */,
 				4FD88E9D2194089200F6A320 /* AuthController.swift in Sources */,
 				4FD88EC621947F7C00F6A320 /* Extensions.swift in Sources */,
 				4FB2A426219707D6005D2C12 /* SignUpCardView.swift in Sources */,
+				4F3D0DF221DA2636007654B8 /* NodeDelegate.swift in Sources */,
+				4F5A275021A4413400AB69E4 /* Pool.swift in Sources */,
+				4F3B911521A55C0900780001 /* PoolNode.swift in Sources */,
 				4FD88EC8219485C200F6A320 /* AuthButton.swift in Sources */,
 				4FFF7335218C7B32002E3827 /* ViewController.swift in Sources */,
+				4FA30CD421D0272F003699C1 /* PoolFileImageCollectionViewCell.swift in Sources */,
 				4F8C6B58219CB11000BA3130 /* PoolFile.swift in Sources */,
 				4FFF7333218C7B32002E3827 /* AppDelegate.swift in Sources */,
+				4FD7B08D21B119D9006FA66F /* PoolDot.swift in Sources */,
 				4F8C6B5A219EBA1A00BA3130 /* NoSQLExtension.swift in Sources */,
+				4FD7B08B21AD286C006FA66F /* PoolConnection.swift in Sources */,
+				4F182ABE21BEF76700CDC25F /* PoolNavigationBar.swift in Sources */,
+				4FA2F67421CD6A3A00A42E7B /* PoolFileInfoCollectionViewCell.swift in Sources */,
+				4FA2F67121CBE37C00A42E7B /* PoolFileController.swift in Sources */,
 				4FD88E9F2194402700F6A320 /* AuthTextField.swift in Sources */,
+				4FD7B08921AAF28D006FA66F /* PoolComment.swift in Sources */,
 				4F8C6B56219C209300BA3130 /* DataManager.swift in Sources */,
 				4FD88E9B2194069A00F6A320 /* SignInCardView.swift in Sources */,
 			);
@@ -621,6 +897,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4F3D0DE421D6BF95007654B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F3D0DDA21D6BF95007654B8 /* DriveUI */;
+			targetProxy = 4F3D0DE321D6BF95007654B8 /* PBXContainerItemProxy */;
+		};
+		4F3D0DE721D6BF95007654B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F3D0DCC21D6BF95007654B8 /* Drive */;
+			targetProxy = 4F3D0DE621D6BF95007654B8 /* PBXContainerItemProxy */;
+		};
 		4FFF7345218C7B33002E3827 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4FFF732E218C7B32002E3827 /* PoolDrive */;
@@ -634,12 +920,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4FFF7336218C7B32002E3827 /* Main.storyboard */ = {
+		4F3D0DDF21D6BF95007654B8 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4FFF7337218C7B32002E3827 /* Base */,
+				4F3D0DE021D6BF95007654B8 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		4FA30D1221D6BBBB003699C1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FA30D1321D6BBBB003699C1 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		4FFF733B218C7B33002E3827 /* LaunchScreen.storyboard */ = {
@@ -653,6 +947,84 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4F3D0DEA21D6BF95007654B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = DriveUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDrive.DriveUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F3D0DEB21D6BF95007654B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = DriveUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDrive.DriveUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F3D0DED21D6BF95007654B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Drive/Drive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = Drive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDrive.Drive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F3D0DEE21D6BF95007654B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Drive/Drive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE78DLA237;
+				INFOPLIST_FILE = Drive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.schueller.PoolDrive.Drive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		4FFF7355218C7B33002E3827 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -773,6 +1145,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 638FAA61BC12DC91DA8F0A19 /* Pods-PoolDrive.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE78DLA237;
@@ -792,6 +1165,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7A07A20A90AFC5213C0831F0 /* Pods-PoolDrive.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE78DLA237;
@@ -896,6 +1270,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4F3D0DE921D6BF95007654B8 /* Build configuration list for PBXNativeTarget "DriveUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F3D0DEA21D6BF95007654B8 /* Debug */,
+				4F3D0DEB21D6BF95007654B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F3D0DEC21D6BF95007654B8 /* Build configuration list for PBXNativeTarget "Drive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F3D0DED21D6BF95007654B8 /* Debug */,
+				4F3D0DEE21D6BF95007654B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4FFF732A218C7B32002E3827 /* Build configuration list for PBXProject "PoolDrive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
