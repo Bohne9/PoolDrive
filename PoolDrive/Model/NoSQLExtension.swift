@@ -78,6 +78,8 @@ extension FirestoreExtension {
             return
         }
         writeToSource()
+//        print("Pushing to path: \(firestorePath)")
+//        print("Pushing following data to firestore: \(getSource())")
         let reference = DataManager.default.document(path: firestorePath)
         reference.setData(getSource(), completion: completion)
     }

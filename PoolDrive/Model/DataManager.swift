@@ -87,10 +87,9 @@ class DataManager {
         return storageReference
     }
     
-    func storageDownload(path: String, to url: URL, completion: @escaping ((URL?, Error?) -> Void)) -> StorageReference {
+    func storageDownload(path: String, to url: URL, completion: @escaping ((URL?, Error?) -> Void)) -> StorageDownloadTask {
         let storageReference = self.storageReference(for: path)
-        storageReference.write(toFile: url, completion: completion)
-        return storageReference
+        return storageReference.write(toFile: url, completion: completion)
     }
     
     func storageDownloadMetadata(path: String, completion: @escaping ((StorageMetadata?, Error?) -> Void)) -> StorageReference {

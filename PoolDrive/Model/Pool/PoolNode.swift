@@ -37,7 +37,10 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     
     /// Pool in Firestore where PoolNode is stored
     var parent: Pool?{
-        didSet{ hasChanged = true }
+        didSet{
+            hasChanged = true
+            loadFromSource()
+        }
     }
     
     /// Firestore documentId
@@ -55,7 +58,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     
     var title: String {
         get {
-            return ""
+            return "--"
         }
         set {
             
@@ -165,6 +168,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
     /// Otherwise a new document will be created and the data will be written into that document
     /// - Parameter completion: Callback for error handling
     func pushToFirestore(_ completion: ((Error?) -> Void)?) {
+        writeToSource()
         if !hasChanged {
             completion?(nil)
             delegate?.node(self, didPushDataToFirestore: nil)
@@ -175,7 +179,7 @@ class PoolNode: FirestoreExtension, CustomStringConvertible {
                 completion?(error)
             }
         }else {
-            print("Push data to existing doc")
+            print("Push data to existing document")
             // If something has changed -> push the data to firestore
             (self as FirestoreExtension).pushToFirestore { (error) in
                 self.delegate?.node(self, didPushDataToFirestore: error)

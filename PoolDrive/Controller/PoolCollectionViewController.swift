@@ -56,6 +56,8 @@ QLPreviewControllerDataSource, QLPreviewControllerDelegate{
         flowLayout.minimumInteritemSpacing = 20
         
         self.title = "Computer Science"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(handleNavigationBarAdd))
         // Do any additional setup after loading the view.
     }
     
@@ -111,19 +113,18 @@ QLPreviewControllerDataSource, QLPreviewControllerDelegate{
         let node = pool!.poolNodes[indexPath.row] as! PoolFile
         
         node.fileDelegate = self
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let filePath="\(documentsPath)/\(node.fileName!)";
-        node.downloadDataFromStorageToLocalFile(URL(fileURLWithPath: filePath)) { (error) in
+        print("Selected item: \(node.title)")
+        node.downloadDataFromStorageToLocalFile { (error) in
             guard error == nil else{
                 print(error!)
                 return
             }
-        
+            
             guard let localURL = node.localUrl else {
                 print("no url")
                 return
             }
-        
+            
             self.urls = [localURL]
             print(localURL.absoluteString)
         
@@ -131,8 +132,6 @@ QLPreviewControllerDataSource, QLPreviewControllerDelegate{
             quickLookController.dataSource = self
             quickLookController.delegate = self
             self.present(quickLookController, animated: true, completion: nil)
-        
-        
         
         }
         
@@ -167,7 +166,10 @@ QLPreviewControllerDataSource, QLPreviewControllerDelegate{
         
         poolFile.data = try? Data(contentsOf: urls.first!)
         
-//        poolFile.meta?.contentType
+        if poolFile.fileName!.hasSuffix("pdf") {
+            print("Uploading pdf file")
+            poolFile.contentType = "application/pdf"
+        }
         
         pool!.addFile(poolFile)
         
@@ -176,12 +178,17 @@ QLPreviewControllerDataSource, QLPreviewControllerDelegate{
                 DataManager.default.processError(error!)
                 return
             }
-            DataManager.default.processInfo("Uploaded image")
+            DataManager.default.processInfo("Uploaded file")
         }
         
     }
     
     
+    @objc func handleNavigationBarAdd() {
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.data"], in: .import)
+        documentPicker.delegate = self
+        present(documentPicker, animated: true, completion: nil)
+    }
     
     
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import Firebase
 
 @UIApplicationMain
@@ -52,8 +53,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             DataManager.default.processError(error)
         }
+        
+        printCacheDirectory()
     }
     
+    
+    func printCacheDirectory() {
+        let fileManager = FileManager.default
+        guard let cache = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
+            return
+        }
+        print("Local cache:")
+        if let files = try? fileManager.contentsOfDirectory(atPath: cache.path) {
+            if files.isEmpty {
+                print("\t - Cache directory is empty.")
+                return
+            }
+            for file in files {
+                print("\t-\(file)")
+            }
+        }else {
+            print("\t - There is no cache dir")
+        }
+    }
     
     var supportedInterfaceOrientations: UIInterfaceOrientationMask = .all
     

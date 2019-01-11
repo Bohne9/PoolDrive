@@ -29,6 +29,17 @@ class Pool: PoolNode {
         didSet{ hasChanged = true }
     }
     
+    override var title: String {
+        get{
+            print("get pool title")
+            return poolName ?? "files"
+        }
+        set{
+            hasChanged = true
+//            poolName = newValue
+        }
+    }
+    
     private(set) var files = [PoolFile]()
     
     private(set) var comments = [PoolComment]()
@@ -56,15 +67,7 @@ class Pool: PoolNode {
     /// Returns the total amount of poolNodes for one specific pool
     var totalPoolNodeCount: Int{
         get {
-            var count = 0
-            count += files.count
-            count += comments.count
-            count += connections.count
-            count += urls.count
-            count += dots.count
-            count += subPools.count
-            
-            return count
+            return poolNodes.count
         }
     }
     
@@ -136,6 +139,9 @@ class Pool: PoolNode {
             completionNodes?(error)
             finishCount += 1
             if (finishCount == 5){
+                self.forEachSupNode({ (node) in
+                    node.parent = self
+                })
                 completion?()
             }
         }
@@ -261,7 +267,7 @@ class Pool: PoolNode {
     }
     
     
-    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+    override class func instantiateType(_ documentID: String, _  data: [String : Any]) -> PoolNode {
         return Pool(data, documentId: documentID)
     }
     

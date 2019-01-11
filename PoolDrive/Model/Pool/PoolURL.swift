@@ -29,7 +29,7 @@ class PoolURL: PoolNode{
     }
     
     
-    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+    override class func instantiateType(_ documentID: String, _  data: [String : Any]) -> PoolNode {
         return PoolURL(data, documentId: documentID)
     }
 }

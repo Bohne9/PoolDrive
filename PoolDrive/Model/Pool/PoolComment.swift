@@ -29,7 +29,7 @@ class PoolComment: PoolNode {
         super.loadFromSource()
     }
     
-    override class func instantiateType(_ documentID: String, _ data: [String : Any]) -> PoolNode {
+    override class func instantiateType(_ documentID: String, _  data: [String : Any]) -> PoolNode {
         return PoolComment(data, documentId: documentID)
     }
 }
